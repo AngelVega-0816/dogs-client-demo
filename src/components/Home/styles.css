@@ -1,0 +1,19 @@
+.Home {
+    width: 100vw;
+    display: flex;
+    
+}
+.cards {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(
+            220px,
+            1fr
+        )
+    );
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}

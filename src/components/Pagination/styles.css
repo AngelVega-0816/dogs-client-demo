@@ -1,0 +1,13 @@
+.paginate-main {
+    z-index: 100;
+    width: 30px;
+    position: absolute;
+    right: 30px;
+    top: 32px;
+    align-items: center;
+}
+.paginate-main .paginate {
+    height: 25px;
+    margin-bottom: 2px;
+    font-size: 13px;
+}

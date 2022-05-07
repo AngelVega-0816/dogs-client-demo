@@ -1,0 +1,78 @@
+.container-details {
+    width: 100vw;
+    /* height: 100%; */
+    overflow: hidden;
+
+}
+.container-details .btn-container {
+    position: absolute;
+    right: 3%;
+    top: 3%;
+}
+.container-details .details{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+}
+.container-details .details .img-container {
+    position: absolute;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    width: 40%;
+    height: 77%;
+    border: 4px solid rgba(9, 94, 94, 0.678);
+    border-radius: 40px 0px 40px 0px;
+}
+.container-details .details .img-details {
+    height: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.container-details .details .info-left {
+    position: absolute;
+    top: 13%;
+    left: 2%;
+    max-width: 25%;
+    padding: 3px;
+    color: azure;
+    text-align: center;
+}
+.container-details .details .info-right {
+    position: absolute;
+    top: 13%;
+    right: 2%;
+    max-width: 26%;
+    min-width: 26%;
+    padding: 3px;
+    color: azure;
+    text-align: center;
+}
+.container-details .details .info-left h2 {
+    margin-bottom: 40%;
+    font-size: 30px;
+    background-color: rgb(10, 66, 66);
+    border: 4px solid rgba(9, 94, 94, 0.678);
+    border-radius: 10px;
+}
+.container-details .details .info-left .temperaments {
+    position: absolute;
+    width: 100%;
+}
+.container-details .details .info-left .temperaments h3,
+.container-details .details .info-right .temperaments h3{
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 3px solid  rgba(5, 95, 95, 0.589);
+    padding-bottom: 2px;
+}
+.container-details .details .info-left .temperaments p,
+.container-details .details .info-right .temperaments p {
+    padding-top: 7px;
+    padding-bottom: 30%;
+    font-size: 23px;    
+}
+
