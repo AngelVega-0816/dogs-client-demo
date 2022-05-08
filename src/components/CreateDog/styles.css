@@ -1,48 +1,62 @@
+.form-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .form {
-    width: 100%;
-    /* height: 100%; */
-    overflow: hidden;
+    width: 60%;
+    height: 94%;
+    /* background-color: ; */
+    display: grid;
+    grid-template-columns: 48% 48%;
+    /* gr */
+    align-items: center;
+    justify-content: space-around;
 }
 .form-create,
 .form-create-image{
-    width: 34%;
+    /* width: 100%; */
+    height: 80%;
     background: rgb(15, 73, 73);
     padding: 30px;
     box-shadow: 0px 0px 16px rgba(19, 53, 53, 0.884);
     border: 1px solid rgba(24, 102, 102, 0.767);
+    display: flex;
+    align-items: center;
 }
-.input-data,
 .input-data{
-    height: 40px;
     width: 100%;
     position: relative;
 }
 .input-data input{
     background-color: rgb(15, 73, 73);
     outline: none;
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
     border: none;
-    font-size: 17px;
+    font-size: 15px;
     color: azure;
     border-bottom: 2px solid silver;
 }
 .form-create .input-data input:focus ~ label,
 .form-create .input-data input:valid ~ label{
-    transform: translateY(-24px);
-    font-size: 20px;
+    transform: translateY(-20px);
     color: azure;
 }
 .input-data label{
     width: 100%;
+    /* height: 0px; */
     position: absolute;
-    bottom: 10px;
+    bottom: 2px;
     left: 0;
     color: grey;
     pointer-events: none;
     transition: all 0.3s ease;
-    font-size: 16px;
+    font-size: 20px;
     background-color: rgb(15, 73, 73);
+    /* background-color: green; */
 }
 .input-data .underline{
     position: absolute;
@@ -84,78 +98,7 @@
     color: azure;
     border-bottom: 2px solid silver;
 }
-.form .btn-form-back {
-    position: absolute;
-    right: 3%;
-    top: 3%;
-}
-.form .btn-form-create {
-    position: absolute;
-    right: 3%;
-    bottom: 3%;
-}
 
-.create-name {
-    position: absolute;
-    top: 2%;
-    left: 20%;
-    border-radius: 33px 0px 0px 0px;
-    -webkit-border-radius: 33px 0px 0px 0px;
-    -moz-border-radius: 33px 0px 0px 0px;
-}
-.create-temperament{
-    z-index: 100;
-    position: absolute;
-    right: 20%;
-    top: 14%;
-    border-radius: 0px 19px 42px 0px;
-    -webkit-border-radius: 0px 19px 42px 0px;
-    -moz-border-radius: 0px 19px 42px 0px;
-    
-}
-
-.create-minweight {
-    z-index: 50;
-    position: absolute;
-    left: 16%;
-    top: 25%;
-    border-radius: 0px 20px 0px 20px;
-}
-
-.create-maxweight {
-    position: absolute;
-    right: 17%;
-    top: 35%;
-}
-
-.create-minheight {
-    position: absolute;
-    left: 19%;
-    bottom: 36%;
-    border-radius: 20px 0px 0px 10px;
-}
-
-.create-maxheight {
-    z-index: 20;
-    position: absolute;
-    right: 22%;
-    bottom: 23%;
-    border-radius: 0px 38px 0px 12px;
-}
-
-.create-lifespan {
-    position: absolute;
-    left: 11%;
-    bottom: 18%;
-    border-radius: 0px 20px;
-}
-
-.create-imageurl {
-    position: absolute;
-    right: 14%;
-    bottom: 9%;
-    border-radius: 0px 0px 20px 40px;
-}
 #menu-temperaments {
     position: absolute;
     z-index: 5000;
@@ -207,6 +150,18 @@
 }
 
 .err {
+    position: absolute;
     margin-top: 4px;
     color: rgb(96, 206, 206);
+}
+
+.btn-form-back {
+    position: absolute;
+    right: 3%;
+    top: 3%;
+}
+.btn-form-create {
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
 }

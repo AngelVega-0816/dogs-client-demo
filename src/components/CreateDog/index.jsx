@@ -160,65 +160,12 @@ export default function CreateDog () {
 
     return (
 
-        <form className="form" onSubmit={e => handleSubmit(e)}>
+        <div className='form-container'>
+            
             <div className='btn-form-back'>
                 <Link to="/home" className='btn btn-exception'>Back</Link>
             </div>
 
-            {/* input para crear nombre */}
-            <div className='form-create create-name'>
-
-                <div className="input-data">
-                    <input 
-                        name="name" 
-                        type="text" 
-                        required
-                        autoComplete='off'
-                        onChange={e => handleChangeInput(e)}
-                        placeholder='Enter letters and spaces only'
-                    />
-                    <div className="underline"></div>
-                    <label>Name</label>
-                    {error.name && <p className='err'>{error.name}</p>}
-                </div>
-
-            </div>
-
-            {/* Opciones para temperaments */}
-            <div className="form-create create-temperament">
-                <div className='input-data'>
-
-                    <h3 
-                        id="temperaments-options"className='temperaments-options'
-                    >
-                        Temperaments
-                    </h3>
-                    <select 
-                        value={selected}        
-                        className="select-temperaments"  
-                        onChange={e => handleChangeInputSelect(e)}
-                        name="temperament"
-                    >
-                        <option default value="default"></option>
-                        {
-                            //si hay temperaments, renderiza options
-                            temperaments.length > 0
-                            ? (
-                                temperaments.map(e => (
-                                    <option
-                                        value={e.temperament} 
-                                        key={e.id}
-                                    >
-                                        {e.temperament}
-                                    </option>))
-                            ) : <option value=""></option>
-                        }
-                    </select>
-
-                </div>
-            </div>
-
-            
             <div id="menu-temperaments">
                     <div className='btn btn-exception btn-temp-sel' onClick={() => {showMenuTemp()}}>{">"}</div>
                     <div className='content-temps'>
@@ -252,124 +199,184 @@ export default function CreateDog () {
             </div>
 
 
-            <div className='form-create create-minweight'>
+            <form className="form" onSubmit={e => handleSubmit(e)}>
 
-                <div className="input-data">
-                    <input 
-                        name="weightMin" 
-                        type="text" 
-                        required
-                        autoComplete='off'
-                        placeholder='Enter numbers only'
-                        onChange={e => handleChangeInput(e)}
-                    />
-                    <div className="underline"></div>
-                    <label>Min Weight</label>
-                    {error.weightMin && <p className='err'>{error.weightMin}</p>}
+                {/* input para crear nombre */}
+                <div className='form-create create-name'>
+
+                    <div className="input-data">
+                        <input 
+                            name="name" 
+                            type="text" 
+                            required
+                            autoComplete='off'
+                            onChange={e => handleChangeInput(e)}
+                            placeholder='Enter letters and spaces only'
+                        />
+                        <div className="underline"></div>
+                        <label>Name</label>
+                        {error.name && <p className='err'>{error.name}</p>}
+                    </div>
+
                 </div>
 
-            </div>
+                {/* Opciones para temperaments */}
+                <div className="form-create create-temperament">
+                    <div className='input-data'>
 
+                        <h3 
+                            id="temperaments-options"className='temperaments-options'
+                        >
+                            Temperaments
+                        </h3>
+                        <select 
+                            value={selected}        
+                            className="select-temperaments"  
+                            onChange={e => handleChangeInputSelect(e)}
+                            name="temperament"
+                        >
+                            <option default value="default"></option>
+                            {
+                                //si hay temperaments, renderiza options
+                                temperaments.length > 0
+                                ? (
+                                    temperaments.map(e => (
+                                        <option
+                                            value={e.temperament} 
+                                            key={e.id}
+                                        >
+                                            {e.temperament}
+                                        </option>))
+                                ) : <option value=""></option>
+                            }
+                        </select>
 
-            <div className='form-create create-maxweight'>
-
-                <div className="input-data">
-                    <input 
-                        name="weightMax"
-                        type="text" 
-                        required 
-                        autoComplete='off'
-                        placeholder='Enter numbers only'
-                        onChange={e => handleChangeInput(e)}
-                    />
-                    <div className="underline"></div>
-                    <label>Max Weight</label>
-                    {error.weightMax && <p className='err'>{error.weightMax}</p>}
+                    </div>
                 </div>
 
-            </div>
+                
+                
 
+                <div className='form-create create-minweight'>
 
-            <div className='form-create create-minheight'>
+                    <div className="input-data">
+                        <input 
+                            name="weightMin" 
+                            type="text" 
+                            required
+                            autoComplete='off'
+                            placeholder='Enter numbers only'
+                            onChange={e => handleChangeInput(e)}
+                        />
+                        <div className="underline"></div>
+                        <label>Min Weight</label>
+                        {error.weightMin && <p className='err'>{error.weightMin}</p>}
+                    </div>
 
-                <div className="input-data">
-                    <input 
-                        name="heightMin"
-                        type="text" 
-                        required
-                        autoComplete='off'
-                        placeholder='Enter numbers only'
-                        onChange={e => handleChangeInput(e)}
-                    />
-                    <div className="underline"></div>
-                    <label>Min Height</label>
-                    {error.heightMin && <p className='err'>{error.heightMin}</p>}
                 </div>
 
-            </div>
 
+                <div className='form-create create-maxweight'>
 
-            <div className='form-create create-maxheight'>
+                    <div className="input-data">
+                        <input 
+                            name="weightMax"
+                            type="text" 
+                            required 
+                            autoComplete='off'
+                            placeholder='Enter numbers only'
+                            onChange={e => handleChangeInput(e)}
+                        />
+                        <div className="underline"></div>
+                        <label>Max Weight</label>
+                        {error.weightMax && <p className='err'>{error.weightMax}</p>}
+                    </div>
 
-                <div className="input-data">
-                    <input 
-                        name="heightMax" 
-                        type="text" 
-                        required
-                        autoComplete='off'
-                        placeholder='Enter numbers only'
-                        onChange={e => handleChangeInput(e)}
-                    />
-                    <div className="underline"></div>
-                    <label>Max Height</label>
-                    {error.heightMax && <p className='err'>{error.heightMax}</p>}
                 </div>
 
-            </div>
 
+                <div className='form-create create-minheight'>
 
-            <div className='form-create create-lifespan'>
+                    <div className="input-data">
+                        <input 
+                            name="heightMin"
+                            type="text" 
+                            required
+                            autoComplete='off'
+                            placeholder='Enter numbers only'
+                            onChange={e => handleChangeInput(e)}
+                        />
+                        <div className="underline"></div>
+                        <label>Min Height</label>
+                        {error.heightMin && <p className='err'>{error.heightMin}</p>}
+                    </div>
 
-                <div className="input-data">
-                    <input 
-                        name="lifespan" 
-                        type="text" 
-                        required 
-                        autoComplete='off'
-                        placeholder='00 - 99 years'
-                        onChange={e => handleChangeInput(e)}
-                    />
-                    <div className="underline"></div>
-                    <label>Life Span</label>
-                    {error.lifespan && <p className='err'>{error.lifespan}</p>}
                 </div>
 
-            </div>
 
+                <div className='form-create create-maxheight'>
 
-            <div className='form-create-image create-imageurl'>
+                    <div className="input-data">
+                        <input 
+                            name="heightMax" 
+                            type="text" 
+                            required
+                            autoComplete='off'
+                            placeholder='Enter numbers only'
+                            onChange={e => handleChangeInput(e)}
+                        />
+                        <div className="underline"></div>
+                        <label>Max Height</label>
+                        {error.heightMax && <p className='err'>{error.heightMax}</p>}
+                    </div>
 
-                <div className="input-data">
-                    <input
-                        name="image" 
-                        type="text" 
-                        autoComplete='off'
-                        placeholder='Image URL'
-                        onChange={e => {
-                            handleChangeInput(e)
-                        }}
-                    />
-                    <div className="underline"></div>
-                    {/* <label id='image'>Image URL</label> */}
                 </div>
 
-            </div>
+
+                <div className='form-create create-lifespan'>
+
+                    <div className="input-data">
+                        <input 
+                            name="lifespan" 
+                            type="text" 
+                            required 
+                            autoComplete='off'
+                            placeholder='00 - 99 years'
+                            onChange={e => handleChangeInput(e)}
+                        />
+                        <div className="underline"></div>
+                        <label>Life Span</label>
+                        {error.lifespan && <p className='err'>{error.lifespan}</p>}
+                    </div>
+
+                </div>
+
+
+                <div className='form-create-image create-imageurl'>
+
+                    <div className="input-data">
+                        <input
+                            name="image" 
+                            type="text" 
+                            autoComplete='off'
+                            placeholder='Image URL'
+                            onChange={e => {
+                                handleChangeInput(e)
+                            }}
+                        />
+                        <div className="underline"></div>
+                    </div>
+
+                </div>
+
+
+            </form>
 
             <div className='btn-form-create'>
                 <button  className='btn btn-exception' type='submit'>Create</button>
             </div>
 
-        </form>
+        </div>
 
     )
 
