@@ -46,8 +46,7 @@ export default function Details () {
                                     </div>
                                 </div>
 
-                                <div className='img-container'>
-                                    <img className="img-details" src={allDetails[0].image} alt="" />
+                                <div className='img-container' style={{backgroundImage: `url(${allDetails[0].image})`}}>
                                 </div>
 
                                 <div className="info-right">
