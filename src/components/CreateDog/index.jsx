@@ -33,40 +33,40 @@ export default function CreateDog () {
         else if(!/^[a-zA-Z\s]*$/.test(input.name)) {
             error.name = "Must contain letters and spaces only";
         }
-        if(!input.heightMin){
+        else if(!input.heightMin){
             error.heightMin = 'Height Min is required';
         }
-        if(!input.heightMax){
+        else if(!input.heightMax){
             error.heightMax = 'Height Max is required';
         }
-        if(!input.weightMin){
+        else if(!input.weightMin){
             error.weightMin = 'Weight Min is required';
         }
-        if(!input.weightMax){
+        else if(!input.weightMax){
             error.weightMax = 'Weight Max is required';
         }
-        if(input.heightMin < 0){
+        else if(input.heightMin < 0){
             error.heightMin = 'Height Min must be greater than 0';
         }
-        if(input.heightMin > input.heightMax){
+        else if(input.heightMin > input.heightMax){
             error.heightMin = 'Height Min cannot be greater than Height Max';
         }
         
-        if(input.heightMax < 0){
+        else if(input.heightMax < 0){
             error.heightMax = 'Height Max must be greater than 0';
         }
         
-        if(input.weightMin< 0){
+        else if(input.weightMin< 0){
             error.weightMin = 'Weight Min must be greater than 0';
         }
-        if(input.weightMin > input.weightMax){
+        else if(input.weightMin > input.weightMax){
             error.weightMin = 'Weight Min cannot be greater than Weight Max';
         }
-        if(input.weightMax < 0){
+        else if(input.weightMax < 0){
             error.weightMax = 'Weight Max must be greater than 0';
         }
-        if(input.lifespan < 0){
-            error.lifespan = 'Must be greater than 0';
+        else if(input.lifespan < 0 && input.lifespan > 99){
+            error.lifespan = 'Must be greater than 0 and less than 99';
         }
         return error;
     }
@@ -105,23 +105,25 @@ export default function CreateDog () {
 
     let handleSubmit = (e) => {
         e.preventDefault();
-        if(input.name && input.heightMin && input.heightMax && input.weightMin
-            && input.weightMax && input.lifespan && input.temperament){
-            dispatch(postDog(input));
-            alert('Dog created!')
-            // console.log(input)
-            setInput({
-                name: '',
-                heightMin: '',
-                heightMax: '',
-                weightMin: '',
-                weightMax: '',
-                lifespan: '',
-                image: '',
-                temperament: [],
-            });
-            navigate('/home');
-        } else {
+        if(error.name && error.weightMax && error.weightMin && error.heightMax && error.heightMin && error.lifespan) {
+            if(input.name && input.heightMin && input.heightMax && input.weightMin
+                && input.weightMax && input.lifespan && input.temperament){
+                dispatch(postDog(input));
+                alert('Dog created!')
+                // console.log(input)
+                setInput({
+                    name: '',
+                    heightMin: '',
+                    heightMax: '',
+                    weightMin: '',
+                    weightMax: '',
+                    lifespan: '',
+                    image: '',
+                    temperament: [],
+                });
+                navigate('/home');
+            }
+        }else {
             alert('Please, fill in all the required fields')
         }
     };
