@@ -105,12 +105,11 @@ export default function CreateDog () {
 
     let handleSubmit = (e) => {
         e.preventDefault();
-        if(error.name && error.weightMax && error.weightMin && error.heightMax && error.heightMin && error.lifespan) {
+        if(Object.keys(error).length == 0) {
             if(input.name && input.heightMin && input.heightMax && input.weightMin
                 && input.weightMax && input.lifespan && input.temperament){
                 dispatch(postDog(input));
                 alert('Dog created!')
-                // console.log(input)
                 setInput({
                     name: '',
                     heightMin: '',
@@ -369,12 +368,12 @@ export default function CreateDog () {
 
                 </div>
 
+                <div className='btn-form-create'>
+                    <button  className='btn btn-exception' type='submit'>Create</button>
+                </div>
 
             </form>
 
-            <div className='btn-form-create'>
-                <button  className='btn btn-exception' type='submit'>Create</button>
-            </div>
 
         </div>
 
