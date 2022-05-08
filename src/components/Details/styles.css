@@ -14,12 +14,10 @@
     display: flex;
     align-items: center;
     text-transform: uppercase;
-
+    justify-content: center;
 }
 .container-details .details .img-container {
     position: absolute;
-    margin-left: 50%;
-    transform: translateX(-50%);
     overflow: hidden;
     width: 40%;
     height: 77%;
