@@ -15,7 +15,6 @@ export default function Pagination ({ allDogs, dogsPages, paginate }) {
             <div className='paginate-button'>
             
                 {
-                    console.log(pages)
                     pages.length && pages.map( e => (
                         <div key={e} className="btn paginate btn-exception" onClick={() => paginate(e)}>
                             {e}
