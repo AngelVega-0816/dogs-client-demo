@@ -102,7 +102,7 @@ export function filterDogsCreated (payload) {
 // };
 export function postDog(payload){
     return async function(){
-        var json = await axios.post('http://localhost:3001/dog', payload)
+        var json = await axios.post(`${host}/dog`, payload)
             .then(res => json)
     }
 }
