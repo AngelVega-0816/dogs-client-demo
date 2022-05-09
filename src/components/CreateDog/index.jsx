@@ -338,13 +338,12 @@ export default function CreateDog () {
                         <input 
                             name="lifespan" 
                             type="text" 
-                            required 
                             autoComplete='off'
                             placeholder='00 - 99 years'
                             onChange={e => handleChangeInput(e)}
                         />
                         <div className="underline"></div>
-                        <label>Life Span</label>
+                        <label id="static">Life Span</label>
                         {error.lifespan && <p className='err'>{error.lifespan}</p>}
                     </div>
 
@@ -364,6 +363,7 @@ export default function CreateDog () {
                             }}
                         />
                         <div className="underline"></div>
+                        <label id='static'>Image URL</label>
                     </div>
 
                 </div>

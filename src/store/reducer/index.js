@@ -117,14 +117,11 @@ export default function rootReducer (state = initialState, action) {
         case types.filterDogsCreated: 
             let filteredDogsCreated
             if (action.payload == "db") {
-                filteredDogsCreated = state.allDogs.filter(e => e.createdInDb);
-                if(!filteredDogsCreated.length) alert("there are no dogs in the database with the current filters")
-                else return {...state, allDogs: filteredDogsCreated}
+                filteredDogsCreated = state.preloadedDogs.filter(e => e.createdInDb);
+                return {...state, allDogs: filteredDogsCreated}
             } else if (action.payload == "api") {
-                filteredDogsCreated = state.allDogs.filter(e => !e.createdInDb)
-                if(!filteredDogsCreated.length) alert("there are no dogs in the api with the current filters")
-                else return {...state, allDogs: filteredDogsCreated}
-
+                filteredDogsCreated = state.preloadedDogs.filter(e => !e.createdInDb)
+            return {...state, allDogs: filteredDogsCreated}
             }
 
 // -------------------------------------------
