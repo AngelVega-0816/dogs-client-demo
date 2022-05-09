@@ -350,7 +350,7 @@ export default function CreateDog () {
                 </div>
 
 
-                <div className='form-create-image create-imageurl'>
+                <div className='form-create create-imageurl'>
 
                     <div className="input-data">
                         <input
