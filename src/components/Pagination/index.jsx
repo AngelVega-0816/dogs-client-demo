@@ -15,11 +15,11 @@ export default function Pagination ({ allDogs, dogsPages, paginate }) {
             <div className='paginate-button'>
             
                 {
-                    pages.length && pages.map( e => (
+                    pages.length ? pages.map( e => (
                         <div key={e} className="btn paginate btn-exception" onClick={() => paginate(e)}>
                             {e}
                         </div>
-                    )) 
+                    )) : null
                 }
 
             </div>
