@@ -1,10 +1,12 @@
 .paginate-main {
     z-index: 100;
     width: 30px;
+    height: 100vh;
     position: absolute;
     right: 30px;
-    top: 32px;
+    display: flex;
     align-items: center;
+
 }
 .paginate-main .paginate {
     height: 25px;

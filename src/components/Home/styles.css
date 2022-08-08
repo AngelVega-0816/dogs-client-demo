@@ -5,6 +5,7 @@
 }
 .cards {
     width: 80%;
+    max-width: 1097px;
     display: grid;
     grid-template-columns: repeat(
         auto-fit,
